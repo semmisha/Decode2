@@ -3,7 +3,6 @@ package main
 import (
 	"Decoder2/usescases"
 	"testing"
-	"time"
 )
 
 func TestConvert(t *testing.T) {
@@ -24,5 +23,5 @@ func TestConvert(t *testing.T) {
 			t.Errorf("%v != %v", result, Realresult)
 		}
 	})
-	time.Sleep(5 * time.Second)
+
 }

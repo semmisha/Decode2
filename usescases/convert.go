@@ -45,7 +45,7 @@ func Bolid(smReadstring string, logger *logrus.Logger) string {
 	var smArrayFixedBolid = make([]byte, 8)
 	smArray, err := hex.DecodeString(smReadstring)
 	if err != nil {
-		logrus.Errorf("\nUnable to decode string to hex for %v , error %v\n", &runtime.Func{}, err)
+		logger.Errorf("\nUnable to decode string to hex for %v , error %v\n", &runtime.Func{}, err)
 
 	}
 
