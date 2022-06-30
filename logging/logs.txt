@@ -31,3 +31,17 @@ Unable to unmarshall, error:%v
 invalid character '<' looking for beginning of value 
 [31mERRO[0m[0006]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
 Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0011]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0006]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0005]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0007]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0005]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mERRO[0m[0007]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 
+[31mPANI[0m[0005]file:apiErrors.go , line:55 Decoder2/logging.HandleApiError 
+Unable to unmarshall, error:invalid character '<' looking for beginning of value 

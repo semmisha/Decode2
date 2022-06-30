@@ -47,12 +47,12 @@ func HandleApiError(res *http.Response, logger *logrus.Logger) (string, error) {
 	data := NewApiReply()
 	read, err := io.ReadAll(res.Body)
 	if err != nil {
-		logger.Errorf("\nUnable to read body, error:%v\n", err)
+		logger.Panicf("\nUnable to read body, error:%v\n", err)
 
 	}
 	err = json.Unmarshal(read, data)
 	if err != nil {
-		logger.Errorf("\nUnable to unmarshall, error:%v\n", err)
+		logger.Panicf("\nUnable to unmarshall, error:%v\n", err)
 
 	}
 

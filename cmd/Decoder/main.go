@@ -2,7 +2,10 @@ package main
 
 import (
 	. "Decoder2/controller/api"
+	"Decoder2/env"
+	"Decoder2/utils"
 	"fmt"
+	"time"
 
 	"Decoder2/logging"
 	"Decoder2/usescases"
@@ -12,6 +15,8 @@ import (
 	"strings"
 )
 
+const envPath = "conf.env"
+
 func NewDecoderStruct() *DecoderStruct {
 	return &DecoderStruct{}
 }
@@ -20,6 +25,7 @@ func main() {
 	Logger := logging.Logger()
 	smInfo := NewDecoderStruct()
 	smReader := bufio.NewReader(os.Stdin)
+	envVar := env.ParseEnv(Logger, envPath)
 
 	for {
 		fmt.Print("\n<---- Необходимо приложить карту (Расскладка клавиатуры должна быть английская),  потом нажать Enter ---->\n")
@@ -42,11 +48,15 @@ func main() {
 
 			fmt.Print("\n<---- Введите ФИО, и снова Enter ---->\n")
 			smInfo.User, _ = smReader.ReadString('\n')
-			//smInfo.User = strings.TrimSpace(strings.TrimSuffix(smReadHex, "\n"))
-			marshaledJSON := SmJson(*smInfo, Logger)
-			SmApi(marshaledJSON, Logger)
-			fmt.Printf("\nДанные о карте отправлены в SD\n%+v\n Приложение можно закрывать\n", smInfo)
 
+			utils.ClearScreen(Logger)
+			marshaledJSON := SmJson(*smInfo, Logger)
+			SmApi(marshaledJSON, envVar, Logger)
+
+			fmt.Printf("\nДанные о карте отправлены в SD\n\nKM: %+v\nStork: %+v\nBolid: %+v\nUser: %+v\nПриложение можно закрывать\n", smInfo.KM, smInfo.Stork, smInfo.Bolid, smInfo.User)
+
+			time.Sleep(1 * time.Minute)
+			os.Exit(0)
 		}
 	}
 }

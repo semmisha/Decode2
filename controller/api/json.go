@@ -51,7 +51,7 @@ func SmJson(sdInput DecoderStruct, logger *logrus.Logger) []byte {
 	sdData.Request.Priority.Name = "Средний"
 	var ur, err = json.MarshalIndent(sdData, "", " ")
 	if err != nil {
-		logger.Errorf("\nUnable to marshall JSON, error:%v\n", err)
+		logger.Panicf("\nUnable to marshall JSON, error:%v\n", err)
 	}
 
 	return ur
